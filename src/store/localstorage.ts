@@ -5,7 +5,7 @@ const RECENT_CAPACITY = 10
 
 export type ActiveMode = 'normal' | 'select' | 'copy'
 
-export const themeColor = "#65428a"
+export const themeColor = "#9c5bd9"
 export const iconSize = useStorage('icones-icon-size', 'text-4xl')
 export const previewColor = ref('#888888')
 export const copyPreviewColor = useStorage('icones-copy-preview-color', true)
