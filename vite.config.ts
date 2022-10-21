@@ -1,15 +1,16 @@
+import Vue from '@vitejs/plugin-vue'
+import dayjs from 'dayjs'
+import fg from 'fast-glob'
 import { join, resolve } from 'path'
+import UnoCSS from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
-import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
 import { VitePWA } from 'vite-plugin-pwa'
-import dayjs from 'dayjs'
-import Vue from '@vitejs/plugin-vue'
-import UnoCSS from 'unocss/vite'
-import fg from 'fast-glob'
 
 export default defineConfig({
+  base: '/notionicons',
   plugins: [
     Vue({
       reactivityTransform: true,
@@ -34,20 +35,20 @@ export default defineConfig({
     }),
     VitePWA({
       manifest: {
-        name: 'Icônes',
-        short_name: 'Icônes',
-        icons: [
-          {
-            src: '/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            src: '/android-chrome-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-        ],
+        name: 'Notion Icons',
+        short_name: 'Notion Icons',
+        // icons: [
+        //   {
+        //     src: '/android-chrome-192x192.png',
+        //     sizes: '192x192',
+        //     type: 'image/png',
+        //   },
+        //   {
+        //     src: '/android-chrome-512x512.png',
+        //     sizes: '512x512',
+        //     type: 'image/png',
+        //   },
+        // ],
       },
       includeAssets: fg.sync('**/*.*', { cwd: join(process.cwd(), 'public'), onlyFiles: true }),
     }),

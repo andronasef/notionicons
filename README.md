@@ -1,7 +1,8 @@
 <h1 align="center">
-Icônes
+Notion Icons
 </h1>
 
+<!-- 
 <p align="center">Icon Explorer with <b>Instant</b> searching, powered by <a href="https://github.com/iconify/iconify" target="_blank">Iconify</a> </p>
 
 <p align="center">
@@ -57,4 +58,4 @@ Icônes
 
 ## License
 
-MIT - Anthony Fu 2020
+MIT - Anthony Fu 2020 -->
