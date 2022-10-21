@@ -10,7 +10,7 @@ import Pages from 'vite-plugin-pages'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: '/notionicons',
+  base: '/notionicons/',
   plugins: [
     Vue({
       reactivityTransform: true,
@@ -37,18 +37,18 @@ export default defineConfig({
       manifest: {
         name: 'Notion Icons',
         short_name: 'Notion Icons',
-        // icons: [
-        //   {
-        //     src: '/android-chrome-192x192.png',
-        //     sizes: '192x192',
-        //     type: 'image/png',
-        //   },
-        //   {
-        //     src: '/android-chrome-512x512.png',
-        //     sizes: '512x512',
-        //     type: 'image/png',
-        //   },
-        // ],
+        icons: [
+          {
+            src: '/android-chrome-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/android-chrome-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
       },
       includeAssets: fg.sync('**/*.*', { cwd: join(process.cwd(), 'public'), onlyFiles: true }),
     }),

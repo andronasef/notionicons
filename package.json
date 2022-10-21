@@ -17,12 +17,12 @@
     "postinstall": "esno scripts/prepare.ts",
     "prebuild": "esno scripts/prebuild.ts",
     "postbuild": "esno scripts/postbuild.ts",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "dev": "vite --port 3333 --open",
     "typecheck": "vue-tsc --noEmit",
-    "dev:electron": "npm -C ./electron run dev",
     "build": "cross-env NODE_ENV=production vite build",
-    "build:electron": "cross-env NODE_ENV=production npm -C ./electron run build"
+    "preview & build":"vite build && vite preview"
+    
   },
   "dependencies": {
     "@antfu/utils": "^0.5.2",

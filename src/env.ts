@@ -2,5 +2,5 @@ export const isElectron = location.protocol === 'app:' || (process.env.NODE_ENV 
 export const isVSCode = location.protocol === 'vscode-webview:'
 export const isLocalMode = isElectron || isVSCode
 
-export const basePath = isVSCode ? window.baseURI : '/'
-export const staticPath = isVSCode ? window.staticURI : ''
+export const basePath = isVSCode ? window.baseURI : '/notionicons/'
+export const staticPath = isVSCode ? window.staticURI : '/notionicons/'
