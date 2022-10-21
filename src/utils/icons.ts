@@ -1,5 +1,5 @@
 import { buildIcon, loadIcon } from 'iconify-icon'
-import { getTransformedId } from '../store'
+import { getTransformedId, previewColor } from '../store'
 import Base64 from './base64'
 import { HtmlToJSX } from './htmlToJsx'
 
@@ -17,7 +17,7 @@ export async function getSvgLocal(icon: string, size = '1em', color = 'currentCo
 
 export async function getSvg(icon: string, size = '1em', color = 'currentColor') {
   return await getSvgLocal(icon, size, color)
-   || await fetch(`${API_ENTRY}/${icon}.svg?inline=false&height=${size}&color=${encodeURIComponent(color)}`).then(r => r.text()) || ''
+    || await fetch(`${API_ENTRY}/${icon}.svg?inline=false&height=${size}&color=${encodeURIComponent(color)}`).then(r => r.text()) || ''
 }
 
 export async function getSvgSymbol(icon: string, size = '1em', color = 'currentColor') {
@@ -117,7 +117,7 @@ export async function getIconSnippet(icon: string, type: string, snippet = true,
     case 'svg-symbol':
       return await getSvgSymbol(icon, '32', color)
     case 'data_url':
-      return `data:image/svg+xml;base64,${Base64.encode(await getSvg(icon, undefined, color))}`
+      return `${Base64(await getSvg(icon, undefined, previewColor.value))}`
     case 'pure-jsx':
       return ClearSvg(await getSvg(icon, undefined, color))
     case 'jsx':

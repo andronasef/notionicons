@@ -8,7 +8,9 @@ const { icon } = defineProps({
 </script>
 
 <template>
+  
   <iconify-icon :icon="icon" :class="$attrs.class" mode="style" />
+  
 </template>
 
 <style>

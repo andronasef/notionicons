@@ -1,6 +1,27 @@
 <script setup lang="ts">
+import copyTextToClipboard from 'copy-text-to-clipboard'
 import type { PropType } from 'vue'
 import { getSearchHighlightHTML } from '../hooks'
+import { getIconSnippet } from '../utils/icons'
+
+let copied = $ref(false)
+
+
+function onCopy(status: boolean) {
+  copied = status
+  setTimeout(() => {
+    copied = false
+  }, 2000)
+}
+
+const copy = async (icon:any) => {
+  onCopy(true)
+  const text = await getIconSnippet(icon, "data_url", true)
+  if (!text)
+    return
+
+  copyTextToClipboard(text)
+}
 
 defineProps({
   icons: {
@@ -13,7 +34,7 @@ defineProps({
   },
   size: {
     type: String,
-    default: '2xl',
+    default: '4xl',
   },
   spacing: {
     type: String,
@@ -52,7 +73,7 @@ defineEmits<{
       :key="icon"
       class="non-dragging icons-item flex tooltip"
       :class="[spacing, selected.includes(namespace + icon) ? 'active' : '']"
-      @click="$emit('select', namespace + icon)"
+      @click="copy(icon)"
     >
       <Icon
         class="tooltip-content non-dragging leading-none h-1em"
@@ -75,6 +96,11 @@ defineEmits<{
       </span>
     </div>
   </div>
+
+  <Notification :value="copied">
+          <Icon icon="mdi:check" class="inline-block mr-2 font-xl align-middle" />
+          <span class="align-middle">Copied</span>
+        </Notification>
 </template>
 
 <style>

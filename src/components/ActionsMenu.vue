@@ -1,10 +1,10 @@
 <script setup lang='ts'>
 import type { PropType } from 'vue'
-import { activeMode, iconSize, inProgress, isFavorited, listType, progressMessage, toggleFavorite } from '../store'
-import { cacheCollection, downloadAndInstall, isInstalled } from '../data'
 import type { CollectionMeta } from '../data'
-import { PackIconFont, PackJsonZip, PackSvgZip } from '../utils/pack'
+import { cacheCollection, downloadAndInstall, isInstalled } from '../data'
 import { isElectron } from '../env'
+import { activeMode, iconSize, inProgress, isFavorited, listType, previewColor, progressMessage, toggleFavorite } from '../store'
+import { PackIconFont, PackJsonZip, PackSvgZip } from '../utils/pack'
 
 const props = defineProps({
   collection: {
@@ -16,7 +16,7 @@ const props = defineProps({
 const menu = ref(
   listType.value === 'list'
     ? 'list'
-    : iconSize.value === 'text-4xl'
+    : iconSize.value === 'text-2xl'
       ? 'large'
       : 'small',
 )
@@ -130,6 +130,12 @@ const favorited = computed(() => isFavorited(props.collection.id))
 
 <template>
   <div flex="~ gap3" text-xl items-center>
+      <div :style="{ color: previewColor }">
+        <ColorPicker v-model:value="previewColor" class="inline-block ">
+          <Icon class="mt-2" icon="ic:baseline-color-lens" />
+      </ColorPicker>
+    </div>
+
     <DarkSwitcher />
 
     <button
@@ -165,21 +171,21 @@ const favorited = computed(() => isFavorited(props.collection.id))
             List
           </option>
         </optgroup>
-        <optgroup label="Modes">
+        <!-- <optgroup label="Modes">
           <option value="select">
             Multiple select
           </option>
           <option value="copy">
             Name copying mode
           </option>
-        </optgroup>
+        </optgroup> -->
 
         <!--
             TODO: due to this function requires to download and pack
                   the full set, we should make some UI to aware users
                   in browser version.
           -->
-        <optgroup v-if="collection.id !== 'all'" label="Downloads">
+        <!-- <optgroup v-if="collection.id !== 'all'" label="Downloads">
           <option v-if="!isElectron && !installed" value="cache">
             Cache in Browser
           </option>
@@ -192,7 +198,7 @@ const favorited = computed(() => isFavorited(props.collection.id))
           <option value="download_json" :disabled="inProgress">
             JSON
           </option>
-        </optgroup>
+        </optgroup> -->
       </select>
     </div>
   </div>

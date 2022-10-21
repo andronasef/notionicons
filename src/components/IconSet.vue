@@ -1,10 +1,14 @@
 <script setup lang='ts'>
 import copyText from 'copy-text-to-clipboard'
+// import { emit } from 'process'
 import { useRoute, useRouter } from 'vue-router'
-import { activeMode, bags, getSearchResults, iconSize, isCurrentCollectionLoading, listType, showHelp, toggleBag } from '../store'
-import { isLocalMode } from '../env'
 import { cacheCollection } from '../data'
+import { isLocalMode } from '../env'
+import { activeMode, bags, getSearchResults, iconSize, isCurrentCollectionLoading, listType, showHelp, toggleBag } from '../store'
 import { getIconSnippet } from '../utils/icons'
+
+
+
 
 const showBag = $ref(false)
 let copied = $ref(false)
@@ -25,7 +29,7 @@ const namespace = $computed(() => !collection.value || collection.value.id === '
   : `${collection.value.id}:`,
 )
 
-function onCopy(status: boolean) {
+ function onCopy(status: boolean) {
   copied = status
   setTimeout(() => {
     copied = false

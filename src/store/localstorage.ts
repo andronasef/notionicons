@@ -5,10 +5,10 @@ const RECENT_CAPACITY = 10
 
 export type ActiveMode = 'normal' | 'select' | 'copy'
 
-export const themeColor = useStorage('icones-theme-color', '#329672')
-export const iconSize = useStorage('icones-icon-size', '2xl')
-export const previewColor = useStorage('icones-preview-color', '#888888')
-export const copyPreviewColor = useStorage('icones-copy-preview-color', false)
+export const themeColor = "#65428a"
+export const iconSize = useStorage('icones-icon-size', 'text-4xl')
+export const previewColor = ref('#888888')
+export const copyPreviewColor = useStorage('icones-copy-preview-color', true)
 export const listType = useStorage('icones-list-type', 'grid')
 export const favoritedIds = useStorage<string[]>('icones-fav-collections', [])
 export const recentIds = useStorage<string[]>('icones-recent-collections', [])

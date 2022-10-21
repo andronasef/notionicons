@@ -2,7 +2,7 @@
 import { themeColor } from './store'
 
 const style = computed<any>(() => ({
-  '--theme-color': themeColor.value,
+  '--theme-color': themeColor,
 }))
 </script>
 

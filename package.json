@@ -33,6 +33,9 @@
     "fzf": "^0.5.1",
     "hotkeys-js": "^3.10.0",
     "iconify-icon": "1.0.0",
+    "mini-svg-data-uri": "^1.4.4",
+    "svg-to-dataurl": "^1.0.0",
+    "svg64": "^1.2.0",
     "vue": "3.2.40",
     "vue-chemistry": "^0.2.2",
     "vue-router": "4.1.5"

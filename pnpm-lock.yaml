@@ -26,8 +26,11 @@ specifiers:
   hotkeys-js: ^3.10.0
   iconify-icon: 1.0.0
   jszip: ^3.10.1
+  mini-svg-data-uri: ^1.4.4
   pnpm: ^7.12.2
   svg-packer: ^0.0.3
+  svg-to-dataurl: ^1.0.0
+  svg64: ^1.2.0
   typescript: ^4.8.4
   unocss: ^0.45.26
   unplugin-auto-import: ^0.11.2
@@ -50,6 +53,9 @@ dependencies:
   fzf: 0.5.1
   hotkeys-js: 3.10.0
   iconify-icon: 1.0.0
+  mini-svg-data-uri: 1.4.4
+  svg-to-dataurl: 1.0.0
+  svg64: 1.2.0
   vue: 3.2.40
   vue-chemistry: 0.2.2_vue@3.2.40
   vue-router: 4.1.5_vue@3.2.40
@@ -4714,6 +4720,11 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /mini-svg-data-uri/1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
+    dev: false
+
   /minimatch/3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
     dependencies:
@@ -5734,6 +5745,10 @@ packages:
     engines: {node: '>=6.9.5'}
     dev: true
 
+  /svg-to-dataurl/1.0.0:
+    resolution: {integrity: sha512-WrPB9vdd4RO0BjcPN6NJ9ofj3Zt8de16TJZ+JVJ4LnE2OKNGz+HjgGv6rE5Hp3s+OnM56X9i64mfJDU9uf4ZqQ==}
+    dev: false
+
   /svg2ttf/5.0.0:
     resolution: {integrity: sha512-xv4ERtuuaY+RQu7G57nKF7agrAGP+Bqmox72+kIbKek5vyAo02Dus901fR995p0E6adc27+kRhPVynDdShUWWw==}
     hasBin: true
@@ -5745,6 +5760,10 @@ packages:
       svgpath: 2.5.0
       xmldom: 0.1.31
     dev: true
+
+  /svg64/1.2.0:
+    resolution: {integrity: sha512-VhK5eg6eKAJ3L9li+ePFthq7yvRAksgrQ6WLsRV0FRikfiJhDhQWcoHVENHC8oiJa4Ha7Iqw1Plnh/BCG2dpFA==}
+    dev: false
 
   /svgicons2svgfont/9.1.1:
     resolution: {integrity: sha512-iOj7lqHP/oMrLg7S2Iv89LOJUfmIuePefXcs5ul4IsKwcYvL/T/Buahz+nQQJygyuvEMBBXqnCRmnvJggHeJzA==}
