@@ -15,6 +15,8 @@ function onCopy(status: boolean) {
 }
 
 const copy = async (icon:any) => {
+  console.log(icon);
+  
   onCopy(true)
   const text = await getIconSnippet(icon, "data_url", true)
   if (!text)
@@ -73,7 +75,7 @@ defineEmits<{
       :key="icon"
       class="non-dragging icons-item flex tooltip"
       :class="[spacing, selected.includes(namespace + icon) ? 'active' : '']"
-      @click="copy(icon)"
+      @click="copy(namespace + icon)"
     >
       <Icon
         class="tooltip-content non-dragging leading-none h-1em"

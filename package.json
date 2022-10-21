@@ -21,7 +21,7 @@
     "dev": "vite --port 3333 --open",
     "typecheck": "vue-tsc --noEmit",
     "build": "cross-env NODE_ENV=production vite build",
-    "preview & build":"vite build && vite preview"
+    "preview & build":"vite build && vite preview --open"
     
   },
   "dependencies": {
