@@ -21,6 +21,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <Producthunt/>
   <WithNavbar v-if="!collection">
     <div class="py-8 px-4 text-gray-700 text-center dark:text-dark-700">
       Loading...

@@ -28,6 +28,7 @@ declare module '@vue/runtime-core' {
     NavElectron: typeof import('./components/electron/NavElectron.vue')['default']
     NavPlaceholder: typeof import('./components/electron/NavPlaceholder.vue')['default']
     Notification: typeof import('./components/Notification.vue')['default']
+    Producthunt: typeof import('./components/Producthunt.vue')['default']
     Progress: typeof import('./components/Progress.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
